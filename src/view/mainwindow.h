@@ -71,14 +71,6 @@ class MainWindow : public QMainWindow {
   void keyPressEvent(QKeyEvent *event) override;
 
  private:
-  enum {
-    ANOTHER = 0,
-    PLUS_MINUS = 1,
-    MLT_DiVIDE = 2,
-    DEGREE = 3,
-    FUNC = 4,
-  };
-
   Ui::MainWindow *ui;
   void add_text(QString str);
   void correct_expression(const QString expression);

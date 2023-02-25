@@ -9,7 +9,7 @@ all: install
 .PHONY: install
 install:
 	cd ../build && cmake ../src/. && make
-	open ./../build/calculator.app
+	./../build/calculator
 
 .PHONY: uninstall
 uninstall:

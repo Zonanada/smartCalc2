@@ -70,7 +70,7 @@ double Model::solution_without_checks() noexcept {
   clear_data();
   parse();
   change_unary_minus();
-  chage_x_to_double();
+  change_x_to_double();
   insert_multiplay();
   add_backets();
   translate_polish_notation();
@@ -90,7 +90,7 @@ double Model::get_x() const noexcept { return value_x_; }
 void Model::input_processing() {
   parse();
   change_unary_minus();
-  chage_x_to_double();
+  change_x_to_double();
   insert_multiplay();
 }
 
@@ -209,7 +209,7 @@ void Model::add_backets() noexcept {
   }
 }
 
-int Model::check_backets() noexcept {
+bool Model::is_brackets_correct() noexcept {
   int brackets_left = 0;
   int brackets_right = 0;
   for (auto it = leksems_.begin(); it != leksems_.end(); it++) {
@@ -229,7 +229,7 @@ bool Model::count_dot(std::string str) noexcept {
   for (auto it = str.begin(); it != str.end(); it++) {
     if (*it == '.') count_dot++;
   }
-  return count_dot == 1 || count_dot == 0;
+  return count_dot < 2;
 }
 
 void Model::insert_multiplay() noexcept {
@@ -246,7 +246,7 @@ void Model::insert_multiplay() noexcept {
   }
 }
 
-void Model::chage_x_to_double() noexcept {
+void Model::change_x_to_double() noexcept {
   for (auto it = leksems_.begin(); it != leksems_.end(); it++) {
     if (**it == -2) {
       it->value = double_to_string(value_x_);
@@ -384,7 +384,7 @@ bool Model::is_valid() noexcept {
       return false;
     }
   }
-  if (check_backets()) return false;
+  if (is_brackets_correct()) return false;
   return true;
 }
 

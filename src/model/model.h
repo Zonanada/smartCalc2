@@ -144,7 +144,7 @@ class Model {
   Метод котрый проверяет корректное количество скобочек
   \return Возвращает '1' в случе если некорректно расставленны скобочки или '0'
   */
-  int check_backets() noexcept;
+  bool is_brackets_correct() noexcept;
 
   /*!
   Метод который считает количество точек
@@ -159,7 +159,7 @@ class Model {
   /*!
   Метод который заменяет значение "X" на число
   */
-  void chage_x_to_double() noexcept;
+  void change_x_to_double() noexcept;
 
   /*!
   Метод который вcтавляет "-1*" вместо унарного минуса
@@ -260,7 +260,7 @@ class Model {
       {"cos", 4},  {"sin", 4},  {"tan", 4},  {"ln", 4}, {"acos", 4},
       {"asin", 4}, {"atan", 4}, {"sqrt", 4}, {"log", 4}};
 
-  enum {
+  enum typeOfSymbol {
     NUM = 0,
     FUNC = 1,
     SIGN = 2,

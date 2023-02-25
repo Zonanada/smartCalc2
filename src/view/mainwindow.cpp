@@ -99,7 +99,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
       add_text(".");
       break;
     case '=':
-    case 13:
+    case '\r':
     case '\n':
       on_pushButton_peer_clicked();
       break;
@@ -108,7 +108,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
       add_text("X");
       break;
     case '\b':
-    case 127:
+    case 127:  // Delete
       on_pushButton_CE_clicked();
       break;
     case 's':
