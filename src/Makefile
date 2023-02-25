@@ -17,7 +17,7 @@ uninstall:
 
 .PHONY: dist
 dist:
-	zip -r ../../smartcalc2.zip ../../CPP3_SmartCalc_v2.0-2
+	zip -r ../../smartcalc2.zip ../../sma
 
 .PHONY: dvi
 dvi:
@@ -26,7 +26,7 @@ dvi:
 .PHONY: lint
 lint:
 	cp ../materials/linters/.clang-format ./
-	clang-format -i ./model/* ./controller/* ./view/*
+	clang-format -n ./model/* ./controller/* ./view/*
 	rm .clang-format
 
 .PHONY: gcov_report
