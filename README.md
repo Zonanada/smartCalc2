@@ -23,13 +23,9 @@
 - build-essential 
 - libgl1-mesa-dev
 
+Ubuntu:
 ```
-sudo apt install -y git
-sudo apt install -y cmake
-sudo apt install -y gcc
-sudo apt install -y qt6-base-dev
-sudo apt install -y libqt6charts6-dev
-sudo apt install -y build-essential libgl1-mesa-dev
+sudo apt install -y git cmake qt6-base-dev libqt6charts6-dev build-essential libgl1-mesa-dev
 ```
 
 ### Сборка:
